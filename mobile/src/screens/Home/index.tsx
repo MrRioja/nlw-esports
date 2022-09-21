@@ -1,4 +1,4 @@
-import { FlatList, Image } from "react-native";
+import { FlatList, Image, ScrollView } from "react-native";
 
 import { styles } from "./styles";
 import logoImg from "../../assets/logo-nlw-esports.png";
@@ -29,23 +29,28 @@ export function Home() {
   return (
     <Background>
       <SafeAreaView style={styles.container}>
-        <Image source={logoImg} style={styles.logo} />
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={[styles.screen]}
+        >
+          <Image source={logoImg} style={styles.logo} />
 
-        <Header
-          title="Encontre seu duo!"
-          subtitle="Selecione o game que deseja jogar..."
-        />
+          <Header
+            title="Encontre seu duo!"
+            subtitle="Selecione o game que deseja jogar..."
+          />
 
-        <FlatList
-          horizontal
-          data={games}
-          keyExtractor={(item) => item.id}
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.contentList}
-          renderItem={({ item }) => (
-            <GameCard data={item} onPress={() => handleOpenGame(item)} />
-          )}
-        />
+          <FlatList
+            horizontal
+            data={games}
+            keyExtractor={(item) => item.id}
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.contentList}
+            renderItem={({ item }) => (
+              <GameCard data={item} onPress={() => handleOpenGame(item)} />
+            )}
+          />
+        </ScrollView>
       </SafeAreaView>
     </Background>
   );

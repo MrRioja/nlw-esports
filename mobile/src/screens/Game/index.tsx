@@ -1,5 +1,12 @@
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
+import {
+  FlatList,
+  Image,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Entypo } from "@expo/vector-icons";
 
@@ -44,52 +51,57 @@ export function Game() {
   return (
     <Background>
       <SafeAreaView style={styles.container}>
-        <View style={styles.header}>
-          <TouchableOpacity onPress={handleGoBack}>
-            <Entypo
-              name="chevron-thin-left"
-              size={20}
-              color={THEME.COLORS.CAPTION_300}
-            />
-          </TouchableOpacity>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.screen}
+        >
+          <View style={styles.header}>
+            <TouchableOpacity onPress={handleGoBack}>
+              <Entypo
+                name="chevron-thin-left"
+                size={20}
+                color={THEME.COLORS.CAPTION_300}
+              />
+            </TouchableOpacity>
 
-          <Image source={logoImg} style={styles.logo} />
+            <Image source={logoImg} style={styles.logo} />
 
-          <View style={styles.right} />
-        </View>
+            <View style={styles.right} />
+          </View>
 
-        <Image
-          source={{ uri: game.bannerUrl }}
-          style={styles.cover}
-          resizeMode="cover"
-        />
+          <Image
+            source={{ uri: game.bannerUrl }}
+            style={styles.cover}
+            resizeMode="cover"
+          />
 
-        <Header title={game.title} subtitle="Conecte-se e comece a jogar!" />
+          <Header title={game.title} subtitle="Conecte-se e comece a jogar!" />
 
-        <FlatList
-          data={duos}
-          horizontal
-          style={styles.containerList}
-          keyExtractor={(item) => item.id}
-          showsHorizontalScrollIndicator={false}
-          ListEmptyComponent={() => (
-            <Text style={styles.emptyListText}>
-              Não há anúncios publicados ainda.
-            </Text>
-          )}
-          contentContainerStyle={
-            duos.length > 0 ? styles.contentList : styles.emptyListContent
-          }
-          renderItem={({ item }) => (
-            <DuoCard data={item} onConnect={() => getDiscordUser(item.id)} />
-          )}
-        />
+          <FlatList
+            data={duos}
+            horizontal
+            style={styles.containerList}
+            keyExtractor={(item) => item.id}
+            showsHorizontalScrollIndicator={false}
+            ListEmptyComponent={() => (
+              <Text style={styles.emptyListText}>
+                Não há anúncios publicados ainda.
+              </Text>
+            )}
+            contentContainerStyle={
+              duos.length > 0 ? styles.contentList : styles.emptyListContent
+            }
+            renderItem={({ item }) => (
+              <DuoCard data={item} onConnect={() => getDiscordUser(item.id)} />
+            )}
+          />
 
-        <DuoMatch
-          discord={discordDuoSelected}
-          visible={discordDuoSelected.length > 0}
-          onClose={() => setDiscordDuoSelected("")}
-        />
+          <DuoMatch
+            discord={discordDuoSelected}
+            visible={discordDuoSelected.length > 0}
+            onClose={() => setDiscordDuoSelected("")}
+          />
+        </ScrollView>
       </SafeAreaView>
     </Background>
   );

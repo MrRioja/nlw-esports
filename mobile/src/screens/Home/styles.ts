@@ -1,9 +1,12 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+  screen: {
+    paddingBottom: 50,
+    alignItems: "center",
+  },
   container: {
     flex: 1,
-    alignItems: "center",
   },
   logo: {
     width: 214,

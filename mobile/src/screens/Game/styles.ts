@@ -2,9 +2,12 @@ import { StyleSheet } from "react-native";
 import { THEME } from "../../theme";
 
 export const styles = StyleSheet.create({
+  screen: {
+    paddingBottom: 50,
+    alignItems: "center",
+  },
   container: {
     flex: 1,
-    alignItems: "center",
   },
   header: {
     width: "100%",
