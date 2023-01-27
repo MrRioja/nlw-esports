@@ -6,15 +6,12 @@
 Conecte-se com jogadores dos seus jogos preferidos!
 </h3>
 
-<br><br>
-
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=NLW&message=esports&color=blueviolet&style=for-the-badge"/>
   <img src="https://img.shields.io/github/license/MrRioja/nlw-esports?color=blueviolet&logo=License&style=for-the-badge"/>
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/MrRioja/nlw-esports?color=blueviolet&logo=TypeScript&logoColor=white&style=for-the-badge">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/MrRioja/nlw-esports?color=blueviolet&style=for-the-badge">
 </p>
-<br>
 
 <p align="center">
   <a href="#sobre">Sobre</a> •
@@ -23,8 +20,6 @@ Conecte-se com jogadores dos seus jogos preferidos!
   <a href="#tecnologias">Tecnologias</a> •
   <a href="#autor">Autor</a>  
 </p>
-
-<br><br><br>
 
 ## Sobre
 
@@ -36,7 +31,55 @@ Ocorreu do dia 11 ao dia 18 de Setembro de 2022 e teve como intuito mostrar na p
 
 ## NLW eSports
 
-🚧 **_Em construção_** 🚧
+NLW eSports é uma plataforma cujo objetivo é unir jogadores dos mais variados games para que formem seus duos e conquistem suas vitórias em co-op em seus games preferidos.
+
+A aplicação é composta por dois frontend: mobile e web, cada qual com suas funcionalidades particulares as quais serão apresentadas a seguir.
+
+### NLW eSports - Web
+
+A aplicação web do NLW eSports possui como responsabilidade o cadastro de novos anúncios. É aqui onde os jogadores cadastram seus jogos de interesse, suas informações como nickname e discord e os horários que costumam jogar. ao acessar a aplicação, o usuário irá se deparar com a homepage abaixo aonde serão exibidos os games já cadastrados por outros gamers e o número de anúncios que o game possui:
+
+![Web home](.github/web-home.png)
+
+A única funcionalidade disponível na web é o cadastro de novos anúncios, que é feito através do formulário abaixo:
+
+![Empty ad form](.github/web-empty-ad-form.png)
+
+É através dele que o usuário preenche as informações que estarão disponíveis para os demais usuários que também se interessam pelo game ao qual o anuncio será criado, conforme exemplificado abaixo:
+
+![Ad form](.github/web-ad-form.png)
+
+Após o preenchimento das informações, o anúncio será criado e já estará disponível para os outros usuários se conectarem e iniciar as partidas em co-op rumo às vitorias 🙃.
+
+Para ilustrar a aplicação em funcionamento, deixo abaixo um GIF onde navego pelas funcionalidades do app:
+
+![Demo web](.github/web-demo.gif)
+
+### NLW eSports - Mobile
+
+Vamos falar agora sobre o aplicativo mobile da NLW eSports, suas funcionalidade e responsabilidades. Começamos pela home, que é exibida assim que o usuário acessa o app, contém as mesmas informações da home web e a única diferença aqui é que os cards dos games são clicados, mas falaremos disso em tópicos futuros:
+
+<img src='./.github/mobile-home.png' alt='Mobile home' height='500' />
+
+Ao clicar no game de interesse, será exibido para o usuários os anúncios criados na página web. Os cards de anúncios terão as informações do outro jogador e suas preferências, conforme podemos ver na imagem abaixo:
+
+<img src='./.github/mobile-game-details.png' alt='Game Details' height='500' />
+
+Ao clicar no anúncio de um jogador ao qual o usuário tem interesse de fazer um duo, o Discord do mesmo será exibido no modal abaixo:
+
+<img src='./.github/mobile-player-info.png' alt='Player info card' height='500' />
+
+E pronto, o usuário já pode entrar em contato com o outro player para iniciarem suas jogatinas. Ao clicar no username do Discord do outro jogador, ele é copiado para a área de transferência facilitando assim a busca no Discord:
+
+<img src='./.github/mobile-copy-clipboard.png' alt='Discord copied to clipboard' height='500' />
+
+O app também conta com um sistema de push notification pré implementado porém até então não funcional, conforme mostrado a seguir:
+
+<img src='./.github/mobile-push-notification.png' alt='Mobile push notification' height='500' />
+
+Por fim, deixo um GIF navegando pela aplicação mobile e mostrando suas funcionalidades:
+
+<img src='.github/mobile-demo.gif' alt='Mobile demo' height='500' />
 
 ## Instalação
 
